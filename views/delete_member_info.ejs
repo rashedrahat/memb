@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css"
+    />
+    <link rel="stylesheet" href="#" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="display-4">Member Info</h1>
+      <div class="card text-white bg-danger mb-3" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= member.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= member.status %></h6>
+          <p class="card-text">Email: <%= member.email %></p>
+          <a
+            href="/members/<%= member.id %>"
+            style="color:black;"
+            role="button"
+            class="btn btn-light btn-sm"
+            >Want to Keep?</a
+          >
+          <form method="POST" action="/members/delete/<%= member.id %>">
+            <button style="color:black;" type="submit">Sure to Delete?</button>
+          </form>
+        </div>
+      </div>
+      <h6><a href="/" class="card-link">All Members</a></h6>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
